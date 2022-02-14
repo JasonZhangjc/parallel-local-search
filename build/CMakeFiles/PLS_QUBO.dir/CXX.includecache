@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jasonzjc/parallel_local_search/src/SOL.cpp
+iostream
+-
+vector
+-
+fstream
+-
+string
+-
+sstream
+-
+assert.h
+-
+stdlib.h
+-
+SOL.h
+/home/jasonzjc/parallel_local_search/src/SOL.h
+
+/home/jasonzjc/parallel_local_search/src/SOL.h
+vector
+-
+
