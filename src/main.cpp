@@ -1,6 +1,7 @@
 #include <iostream>
 #include "QUBO.h"
 #include "SOL.h"
+#include "LS.h"
 
 using namespace std;
  
@@ -15,13 +16,18 @@ int main( ) {
    cout << "Bit number of qubo1: " << n1 << endl;
    cout << "Bit number of qubo2: " << n2 << endl;
 
-   // read QUBO
+   // read QUBO: penalty is 100
    qubo1.readQUBO(100, 1);
    // qubo1.printQUBO();
 
    // randomly generate a solution for qubo1
-   SOL sol1(100, qubo1.getQMatrix());
-   sol1.printSOL();
+   SOL sol1(qubo1);
+   // sol1.printSOL();
+
+   // verify whether the solution is a local optima
+   LS ls1(qubo1, sol1);
+   ls1.checkLocalOpt(sol1);
+   ls1.localSearchAll(100);
 
    return 0;
 }

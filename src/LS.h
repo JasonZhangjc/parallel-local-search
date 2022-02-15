@@ -1,43 +1,59 @@
-#ifndef QUBO_H
-#define QUBO_H
+#ifndef LS_H
+#define LS_H
 
 #include <vector>
+#include "QUBO.h"
+#include "SOL.h"
 
 using namespace std;
 
-class QUBO {
+/*
+There is no empty constructor for this class
+must pass parameters
+*/
+
+class LS {
 	/* 
-	Quadratic Unconstrained Binary Optimization;
+	Local Search Algorithm for QUBO;
+	Consider all 1-bit flips at each Monte Carlo step
+	Guaranteed to reach local optima with sufficient time
 	Two members: 
-		number of bits in QUBO: number_bits;
-		QUBO matrix: q_matrix 
-	Several functions to manipulate QUBO 
+		a QUBO object: qubo
+		a SOL object as the initial solution: sol
+	Several functions to manipulate LS
 	*/
 
 	private:
-		int number_bits;
+		QUBO qubo;
 
-		vector<vector<int>> q_matrix; 
+		SOL sol_init;
 
 	public:
-		// empty constructor
-		QUBO(); 
-
 		// constructor with a parameter of number_bits
-		QUBO(int); 
+		LS(QUBO, SOL); 
 
-		// getter for number_bits
-		int getNumberBits();
+		// getter for qubo
+		QUBO getQubo();
 
-		// getter for q_matrix
-		vector<vector <int> > getQMatrix();
+		// getter for sol_init
+		SOL getSolInit();
 
-		// read QUBO files
-		void readQUBO(int, int);
+		// calculate the value of a sol.x
+		int calculateValue(vector<int>);
 
-		// print QUBO
-		void printQUBO();
+		// check whether a SOL is a local optima for the QUBO
+		bool checkLocalOpt(SOL);
+
+		// local search algorithm
+		// consider all 1-bit flips
+		// parameter for the max number of iterations
+		vector<vector<int>> localSearchAll(int);
+
+		// local search algorithm
+		// consider one 1-bit flips
+		// parameter for the max number of iterations
+		void localSearchOne(int);
 
 };
 
-#endif // QUBO_H
+#endif // LS_H

@@ -2,6 +2,7 @@
 #define SOL_H
 
 #include <vector>
+#include "QUBO.h"
 
 using namespace std;
 
@@ -30,11 +31,17 @@ class SOL {
 		// constructor with n
 		SOL(int); 
 
-		// constructor with n and q_matrix;
-		SOL(int, vector<vector<int>>); 
+		// constructor with n, q_matrix, and constant
+		SOL(int, vector<vector<int>>, int); 
 
-		// constructor with n, x, and q_matrix
-		SOL(int, vector<int>, vector<vector<int>>); 
+		// constructor with n, x, q_matrix, and constant
+		SOL(int, vector<int>, vector<vector<int>>, int); 
+
+		// constructor with a QUBO object;
+		SOL(QUBO); 
+
+		// constructor with x and a QUBO object
+		SOL(vector<int>, QUBO); 
 
 		// getter for n
 		int getN();

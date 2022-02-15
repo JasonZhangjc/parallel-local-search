@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jasonzjc/parallel_local_search
+CMAKE_SOURCE_DIR = /home/jasonzjc/parallel-local-search
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jasonzjc/parallel_local_search/build
+CMAKE_BINARY_DIR = /home/jasonzjc/parallel-local-search/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PLS_QUBO.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/PLS_QUBO.dir/flags.make
 
 CMakeFiles/PLS_QUBO.dir/src/LS.cpp.o: CMakeFiles/PLS_QUBO.dir/flags.make
 CMakeFiles/PLS_QUBO.dir/src/LS.cpp.o: ../src/LS.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasonzjc/parallel_local_search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PLS_QUBO.dir/src/LS.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PLS_QUBO.dir/src/LS.cpp.o -c /home/jasonzjc/parallel_local_search/src/LS.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasonzjc/parallel-local-search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PLS_QUBO.dir/src/LS.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PLS_QUBO.dir/src/LS.cpp.o -c /home/jasonzjc/parallel-local-search/src/LS.cpp
 
 CMakeFiles/PLS_QUBO.dir/src/LS.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PLS_QUBO.dir/src/LS.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jasonzjc/parallel_local_search/src/LS.cpp > CMakeFiles/PLS_QUBO.dir/src/LS.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jasonzjc/parallel-local-search/src/LS.cpp > CMakeFiles/PLS_QUBO.dir/src/LS.cpp.i
 
 CMakeFiles/PLS_QUBO.dir/src/LS.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PLS_QUBO.dir/src/LS.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jasonzjc/parallel_local_search/src/LS.cpp -o CMakeFiles/PLS_QUBO.dir/src/LS.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jasonzjc/parallel-local-search/src/LS.cpp -o CMakeFiles/PLS_QUBO.dir/src/LS.cpp.s
 
 CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.o: CMakeFiles/PLS_QUBO.dir/flags.make
 CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.o: ../src/QUBO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasonzjc/parallel_local_search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.o -c /home/jasonzjc/parallel_local_search/src/QUBO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasonzjc/parallel-local-search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.o -c /home/jasonzjc/parallel-local-search/src/QUBO.cpp
 
 CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jasonzjc/parallel_local_search/src/QUBO.cpp > CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jasonzjc/parallel-local-search/src/QUBO.cpp > CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.i
 
 CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jasonzjc/parallel_local_search/src/QUBO.cpp -o CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jasonzjc/parallel-local-search/src/QUBO.cpp -o CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.s
 
 CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.o: CMakeFiles/PLS_QUBO.dir/flags.make
 CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.o: ../src/SOL.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasonzjc/parallel_local_search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.o -c /home/jasonzjc/parallel_local_search/src/SOL.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasonzjc/parallel-local-search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.o -c /home/jasonzjc/parallel-local-search/src/SOL.cpp
 
 CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jasonzjc/parallel_local_search/src/SOL.cpp > CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jasonzjc/parallel-local-search/src/SOL.cpp > CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.i
 
 CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jasonzjc/parallel_local_search/src/SOL.cpp -o CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jasonzjc/parallel-local-search/src/SOL.cpp -o CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.s
 
 CMakeFiles/PLS_QUBO.dir/src/main.cpp.o: CMakeFiles/PLS_QUBO.dir/flags.make
 CMakeFiles/PLS_QUBO.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasonzjc/parallel_local_search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PLS_QUBO.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PLS_QUBO.dir/src/main.cpp.o -c /home/jasonzjc/parallel_local_search/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jasonzjc/parallel-local-search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PLS_QUBO.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/PLS_QUBO.dir/src/main.cpp.o -c /home/jasonzjc/parallel-local-search/src/main.cpp
 
 CMakeFiles/PLS_QUBO.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PLS_QUBO.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jasonzjc/parallel_local_search/src/main.cpp > CMakeFiles/PLS_QUBO.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jasonzjc/parallel-local-search/src/main.cpp > CMakeFiles/PLS_QUBO.dir/src/main.cpp.i
 
 CMakeFiles/PLS_QUBO.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PLS_QUBO.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jasonzjc/parallel_local_search/src/main.cpp -o CMakeFiles/PLS_QUBO.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jasonzjc/parallel-local-search/src/main.cpp -o CMakeFiles/PLS_QUBO.dir/src/main.cpp.s
 
 # Object files for target PLS_QUBO
 PLS_QUBO_OBJECTS = \
@@ -125,7 +125,7 @@ PLS_QUBO: CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.o
 PLS_QUBO: CMakeFiles/PLS_QUBO.dir/src/main.cpp.o
 PLS_QUBO: CMakeFiles/PLS_QUBO.dir/build.make
 PLS_QUBO: CMakeFiles/PLS_QUBO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jasonzjc/parallel_local_search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable PLS_QUBO"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jasonzjc/parallel-local-search/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable PLS_QUBO"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/PLS_QUBO.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/PLS_QUBO.dir/clean:
 .PHONY : CMakeFiles/PLS_QUBO.dir/clean
 
 CMakeFiles/PLS_QUBO.dir/depend:
-	cd /home/jasonzjc/parallel_local_search/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jasonzjc/parallel_local_search /home/jasonzjc/parallel_local_search /home/jasonzjc/parallel_local_search/build /home/jasonzjc/parallel_local_search/build /home/jasonzjc/parallel_local_search/build/CMakeFiles/PLS_QUBO.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jasonzjc/parallel-local-search/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jasonzjc/parallel-local-search /home/jasonzjc/parallel-local-search /home/jasonzjc/parallel-local-search/build /home/jasonzjc/parallel-local-search/build /home/jasonzjc/parallel-local-search/build/CMakeFiles/PLS_QUBO.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PLS_QUBO.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/jasonzjc/parallel_local_search
+# Install script for directory: /home/jasonzjc/parallel-local-search
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jasonzjc/parallel_local_search/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/jasonzjc/parallel-local-search/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

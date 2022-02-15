@@ -11,6 +11,8 @@ class QUBO {
 	Two members: 
 		number of bits in QUBO: number_bits;
 		QUBO matrix: q_matrix 
+		QUBO constant: constant
+		QUBO penalty: penalty
 	Several functions to manipulate QUBO 
 	*/
 
@@ -18,6 +20,10 @@ class QUBO {
 		int number_bits;
 
 		vector<vector<int>> q_matrix; 
+
+		int constant;
+
+		int penalty;
 
 	public:
 		// empty constructor
@@ -31,6 +37,12 @@ class QUBO {
 
 		// getter for q_matrix
 		vector<vector <int> > getQMatrix();
+
+		// getter for constant
+		int getConstant();
+
+		// getter for penalty
+		int getPenalty();
 
 		// read QUBO files
 		void readQUBO(int, int);
