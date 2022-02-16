@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jasonzjc/parallel-local-search/src/LS.cpp
+/home/js/parallel-local-search/src/LS.cpp
 iostream
 -
 vector
@@ -18,37 +18,79 @@ stdlib.h
 time.h
 -
 QUBO.h
-/home/jasonzjc/parallel-local-search/src/QUBO.h
+/home/js/parallel-local-search/src/QUBO.h
 SOL.h
-/home/jasonzjc/parallel-local-search/src/SOL.h
+/home/js/parallel-local-search/src/SOL.h
 LS.h
-/home/jasonzjc/parallel-local-search/src/LS.h
+/home/js/parallel-local-search/src/LS.h
 
-/home/jasonzjc/parallel-local-search/src/LS.h
+/home/js/parallel-local-search/src/LS.h
 vector
 -
 QUBO.h
-/home/jasonzjc/parallel-local-search/src/QUBO.h
+/home/js/parallel-local-search/src/QUBO.h
 SOL.h
-/home/jasonzjc/parallel-local-search/src/SOL.h
+/home/js/parallel-local-search/src/SOL.h
 
-/home/jasonzjc/parallel-local-search/src/QUBO.h
+/home/js/parallel-local-search/src/QUBO.cpp
+iostream
+-
+vector
+-
+fstream
+-
+string
+-
+sstream
+-
+assert.h
+-
+stdlib.h
+-
+time.h
+-
+QUBO.h
+/home/js/parallel-local-search/src/QUBO.h
+
+/home/js/parallel-local-search/src/QUBO.h
 vector
 -
 
-/home/jasonzjc/parallel-local-search/src/SOL.h
+/home/js/parallel-local-search/src/SOL.cpp
+iostream
+-
+vector
+-
+fstream
+-
+string
+-
+sstream
+-
+assert.h
+-
+stdlib.h
+-
+time.h
+-
+QUBO.h
+/home/js/parallel-local-search/src/QUBO.h
+SOL.h
+/home/js/parallel-local-search/src/SOL.h
+
+/home/js/parallel-local-search/src/SOL.h
 vector
 -
 QUBO.h
-/home/jasonzjc/parallel-local-search/src/QUBO.h
+/home/js/parallel-local-search/src/QUBO.h
 
-/home/jasonzjc/parallel-local-search/src/main.cpp
+/home/js/parallel-local-search/src/main.cpp
 iostream
 -
 QUBO.h
-/home/jasonzjc/parallel-local-search/src/QUBO.h
+/home/js/parallel-local-search/src/QUBO.h
 SOL.h
-/home/jasonzjc/parallel-local-search/src/SOL.h
+/home/js/parallel-local-search/src/SOL.h
 LS.h
-/home/jasonzjc/parallel-local-search/src/LS.h
+/home/js/parallel-local-search/src/LS.h
 

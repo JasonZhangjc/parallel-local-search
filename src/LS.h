@@ -52,7 +52,7 @@ class LS {
 		// local search algorithm
 		// consider one 1-bit flips
 		// parameter for the max number of iterations
-		void localSearchOne(int);
+		vector<vector<int>> localSearchOne(int);
 
 };
 

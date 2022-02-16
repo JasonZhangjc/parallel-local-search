@@ -28,6 +28,7 @@ int main( ) {
    LS ls1(qubo1, sol1);
    ls1.checkLocalOpt(sol1);
    ls1.localSearchAll(100);
+   ls1.localSearchOne(10000);
 
    return 0;
 }

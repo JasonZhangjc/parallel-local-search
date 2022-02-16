@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/PLS_QUBO.dir/src/LS.cpp.o CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.o CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.o CMakeFiles/PLS_QUBO.dir/src/main.cpp.o  -o PLS_QUBO 
+/usr/bin/c++      CMakeFiles/PLS_QUBO.dir/src/SOL.cpp.o CMakeFiles/PLS_QUBO.dir/src/QUBO.cpp.o CMakeFiles/PLS_QUBO.dir/src/LS.cpp.o CMakeFiles/PLS_QUBO.dir/src/main.cpp.o  -o PLS_QUBO -rdynamic 
