@@ -176,6 +176,80 @@ int SOL::getV() {
 }
 
 
+// read a solution (a local optima usually)
+// parameters: number of bits, ID of the QUBO, ID of the solution
+void SOL::readSOL(int number_bits, int QUBO_ID, int SOL_ID) {
+	cout << "Reading QUBO_SOL files #" << SOL_ID << " now!" << endl;
+	
+	if (number_bits != n) {
+		cout << "set number_bits when reading QUBO_SOL files" << endl;
+		n = number_bits;
+	}
+
+	// determine the filename
+	string filename_head("qubo_sol_");
+	stringstream sstreamNB, sstreamQuboID, sstreamSolID;
+	sstreamNB << number_bits;
+	sstreamQuboID << QUBO_ID;
+	sstreamSolID << SOL_ID;
+	string str_NB = sstreamNB.str(); // NB: number_bits
+	string str_QuboID = sstreamQuboID.str();
+	string str_SolID = sstreamSolID.str();
+	string filename_mid("_");
+	string filename_tail(".txt");
+
+	string filename;
+	filename = filename_head + str_NB + filename_mid + \
+			   str_QuboID + filename_mid + str_SolID + filename_tail;
+	cout << "filename: " << filename << endl;
+
+	// read file
+	ifstream infile; 
+   	infile.open(filename); 
+
+   	// check whether infile is open
+   	assert(infile.is_open());
+
+   	// read the first line for NB, QuboID, and SolID
+   	string line;
+   	getline(infile, line);
+   	stringstream ssline(line);
+   	string NB;      // NB: number_bits
+   	string QuboID;      // CO: constant
+   	string SolID;      // PE: penalty
+   	ssline >> NB;
+   	ssline >> QuboID;
+   	ssline >> SolID;
+   	assert(stoi(NB) == number_bits);
+   	assert(stoi(QuboID) == QUBO_ID);
+   	assert(stoi(SolID) == SOL_ID);
+
+   	// read the solution vector: NB entries
+   	// clear the x at first
+   	x.clear();
+    getline(infile, line);
+    stringstream ssline_x(line);
+    string pos;
+    while (ssline_x >> pos) {
+    	x.push_back(stoi(pos));
+    }
+
+    // check the number of rows of x
+    cout << "x.size() is: " << x.size() << endl;
+    assert(x.size() == number_bits);
+
+    // read the value of the solution
+    getline(infile, line);
+    stringstream ssline_v(line);
+    ssline_v >> pos;
+    v = stoi(pos);
+    cout << "The v is: " << v << endl;
+
+   	// close the file
+    infile.close();
+}
+
+
 // print SOL
 void SOL::printSOL() {
 	// print n

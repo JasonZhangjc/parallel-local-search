@@ -6,7 +6,7 @@
 #include <math.h>
 #include "QUBO.h"
 #include "SOL.h"
-#include "LS.h"
+#include "RLS.h"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ using namespace std;
 
 
 // constructor with a parameter of number_bits
-LS::LS(QUBO qubo_, SOL sol_init_) {
+RLS::RLS(QUBO qubo_, SOL sol_init_) {
 	// check whether the dimensions match
 	assert(qubo_.getNumberBits() == sol_init_.getN());
 	qubo = qubo_;
@@ -23,14 +23,14 @@ LS::LS(QUBO qubo_, SOL sol_init_) {
 
 
 // getter for QUBO
-QUBO LS::getQubo() {
+QUBO RLS::getQubo() {
 	assert(qubo.getNumberBits() > 0);
 	return qubo;
 }
 
 
 // getter for SOL
-SOL LS::getSolInit() {
+SOL RLS::getSolInit() {
 	assert(sol_init.getN() > 0);
 	return sol_init;
 }
@@ -38,7 +38,7 @@ SOL LS::getSolInit() {
 
 // calculate the value of a sol.x
 // considering the qubo.constant
-int LS::calculateValue(vector<int> x_) {
+int RLS::calculateValue(vector<int> x_) {
 	// initialization
 	int n = x_.size();
 	vector<vector<int>> q_matrix = qubo.getQMatrix();
@@ -60,13 +60,14 @@ int LS::calculateValue(vector<int> x_) {
 }
 
 
-// check whether a solution is a local optima for the QUBO
-bool LS::checkLocalOpt(SOL sol) {
+// check whether a SOL is a local worst for the QUBO
+// a local worst is the worst solution in the neighborhood
+bool RLS::checkLocalWorst(SOL sol) {
 	// check whether the dimensions match
 	int n = sol.getN();
 	assert(qubo.getNumberBits() == n);
 
-	// evaluate local optima by calculating delta_v after an 1-bit flip
+	// evaluate local worst by calculating delta_v after an 1-bit flip
 	vector<vector<int>> q_matrix = qubo.getQMatrix();
 	vector<int> x = sol.getX();
 	int delta_v = 0;
@@ -79,8 +80,8 @@ bool LS::checkLocalOpt(SOL sol) {
 		}
 		delta_v -= q_matrix[i][i];
 		delta_v *= (1 - 2*x[i]);
-		if (delta_v < 0) {
-			cout << "The solution is not local opt as bit #" \
+		if (delta_v > 0) {
+			cout << "The solution is not local worst as bit #" \
 			<< i << " fails the evaluation !" << endl;
 			return false;
 		}
@@ -89,15 +90,13 @@ bool LS::checkLocalOpt(SOL sol) {
 }
 
 
-// REMEMBER: THE PROBLEM IS FROM CALCULATING DELTA_V !!!!!!!!!
-// local search algorithm
-// simulated annealing
-// consider one 1-bit flips
+// reversed local search algorithm: the opposite to LS::localSearchALl()
+// consider all 1-bit flips
 // 1st parameter for the max number of iterations
 // 2nd parameter for initializing distinct random seed
-// 3rd parameter for temperature
-vector<vector<int>> LS::localSearchAll(int max_iters, int seed_id) {
-	cout << "Local search with ALL 1-bit flips is running ............." << endl;
+vector<vector<int>> RLS::reversedLocalSearchAll(int max_iters, int seed_id) {
+	cout << "Reversed local search " << \
+	"with ALL 1-bit flips is running ............." << endl;
 	
 	cout << "The max number of iterations is: " << max_iters << endl;
 	
@@ -112,11 +111,11 @@ vector<vector<int>> LS::localSearchAll(int max_iters, int seed_id) {
 	int v_current = sol_init.getV();
 	int iter = 0;
 
-	// x_list stores all the x until a local optima
+	// x_list stores all the x until a local worst
 	vector<vector<int>> x_list;
 	x_list.push_back(x_current);
 
-	// v_list stores all the v until a local optima
+	// v_list stores all the v until a local worst
 	vector<int> v_list;
 	v_list.push_back(v_current);
 
@@ -134,8 +133,6 @@ vector<vector<int>> LS::localSearchAll(int max_iters, int seed_id) {
 
 
 	while (iter < max_iters) {
-		cout << "Now it is iteration: " << iter+1 << endl;
-
 		// print x_current for comparison in debugging!
 		// for (int i=0; i<n; i++) {
 		// 	cout << x_current[i] << " ";
@@ -155,7 +152,7 @@ vector<vector<int>> LS::localSearchAll(int max_iters, int seed_id) {
 			}
 			delta_v *= (1 - 2*x_current[i]);
 			// evaluate delta_v
-			if (delta_v <= 0) {
+			if (delta_v >= 0) {
 				flip_list.push_back(i);
 				delta_v_list.push_back(delta_v);
 			}
@@ -166,23 +163,20 @@ vector<vector<int>> LS::localSearchAll(int max_iters, int seed_id) {
 		iter ++;
 
 		// select a beneficial flip to accept, if any
-		cout << "The size of flip_list is: " << flip_list.size() << endl;
+		// cout << "The size of flip_list is: " << flip_list.size() << endl;
 		assert(flip_list.size() == delta_v_list.size());
 		if (flip_list.size() > 0) {
 			// randomly accept a flip
 			int random_index = (rand()+iter) % flip_list.size();
 			flip_selected = flip_list[random_index];
-			cout << "The flip_selected is: " << flip_selected << endl;
+			// cout << "The flip_selected is: " << flip_selected << endl;
 
 			// update v_current and x_current
 			v_current += delta_v_list[random_index];
-			cout << "The new v_current is: " << v_current << endl;
+			// cout << "The new v_current is: " << v_current << endl;
 			// cout << "Former: " << x_current[flip_selected] << endl;
 			x_current[flip_selected] = 1 - x_current[flip_selected];
 			// cout << "Latter: " << x_current[flip_selected] << endl;
-
-			// The following line is for debugging!
-			// assert(v_current == calculateValue(x_current));
 
 			// store x_current and v_current
 			x_list.push_back(x_current);
@@ -194,7 +188,7 @@ vector<vector<int>> LS::localSearchAll(int max_iters, int seed_id) {
 			// cout << "The size of cleaned flip_list: " << flip_list.size() << endl;
 
 		} else {
-			cout << "Reach local optima after iteration #" << iter << endl;
+			cout << "Reach local worst after iteration #" << iter << endl;
 			break;
 		}
 		
@@ -213,15 +207,14 @@ vector<vector<int>> LS::localSearchAll(int max_iters, int seed_id) {
 }
 
 
-// local search algorithm
-// Simulated Annealing!!!!!!!!!
+// reversed local search algorithm: the opposite to RLS::localSearchOne()
 // consider one 1-bit flips
-// accept a worse flip under some probability
 // 1st parameter for the max number of iterations
 // 2nd parameter for initializing distinct random seed
 // 3rd parameter for temperature
-vector<vector<int>> LS::localSearchOne(int max_iters, int seed_id, int temp) {
-	cout << "Local search with ONE 1-bit flips is running ............." << endl;
+vector<vector<int>> RLS::reversedLocalSearchOne(int max_iters, int seed_id, int temp) {
+	cout << "Reversed local search " \ 
+	<< "with ONE 1-bit flips is running ............." << endl;
 	
 	cout << "The max number of iterations is: " << max_iters << endl;
 	
@@ -239,11 +232,11 @@ vector<vector<int>> LS::localSearchOne(int max_iters, int seed_id, int temp) {
 	// define a temperature
 	double temperature = (double) temp;
 
-	// x_list stores all the x until a local optima
+	// x_list stores all the x until a local worst
 	vector<vector<int>> x_list;
 	x_list.push_back(x_current);
 
-	// v_list stores all the v until a local optima
+	// v_list stores all the v until a local worst
 	vector<int> v_list;
 	v_list.push_back(v_current);
 
@@ -279,7 +272,7 @@ vector<vector<int>> LS::localSearchOne(int max_iters, int seed_id, int temp) {
 		
 		// evaluate delta_v
 		// if delta_v <= 0, accept the flip
-		if (delta_v <= 0) {
+		if (delta_v >= 0) {
 			// update v_current and x_current
 			v_current += delta_v;
 			// cout << "The new v_current is: " << v_current << endl;
@@ -294,7 +287,7 @@ vector<vector<int>> LS::localSearchOne(int max_iters, int seed_id, int temp) {
 			probability = (double)rand() / (double)RAND_MAX;
 			// 100 is a hyperparameter!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			// can be replaced by temperature!!!!!!!!!!!!!!!!!!!!!!
-			if (probability < exp((double)-delta_v / (double)temperature)) {
+			if (probability < exp((double)delta_v / (double)temperature)) {
 				// update v_current and x_current
 				v_current += delta_v;
 				// cout << "The new v_current is: " << v_current << endl;

@@ -52,6 +52,10 @@ class SOL {
 		// getter for v
 		int getV();
 
+		// read a solution (a local optima usually)
+		// parameters: number of bits, ID of the QUBO, ID of the solution
+		void readSOL(int, int, int);
+
 		// print SOL
 		void printSOL();
 

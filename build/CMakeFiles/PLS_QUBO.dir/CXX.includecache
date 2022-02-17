@@ -1,4 +1,4 @@
-#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
 
 #IncludeRegexScan: ^.*$
 
@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/js/parallel-local-search/src/LS.cpp
+/home/jasonzjc/parallel-local-search/src/LS.cpp
 iostream
 -
 vector
@@ -17,31 +17,31 @@ stdlib.h
 -
 time.h
 -
+math.h
+-
 QUBO.h
-/home/js/parallel-local-search/src/QUBO.h
+/home/jasonzjc/parallel-local-search/src/QUBO.h
 SOL.h
-/home/js/parallel-local-search/src/SOL.h
+/home/jasonzjc/parallel-local-search/src/SOL.h
 LS.h
-/home/js/parallel-local-search/src/LS.h
+/home/jasonzjc/parallel-local-search/src/LS.h
 
-/home/js/parallel-local-search/src/LS.h
+/home/jasonzjc/parallel-local-search/src/LS.h
 vector
 -
 QUBO.h
-/home/js/parallel-local-search/src/QUBO.h
+/home/jasonzjc/parallel-local-search/src/QUBO.h
 SOL.h
-/home/js/parallel-local-search/src/SOL.h
+/home/jasonzjc/parallel-local-search/src/SOL.h
 
-/home/js/parallel-local-search/src/QUBO.cpp
+/home/jasonzjc/parallel-local-search/src/QUBO.h
+vector
+-
+
+/home/jasonzjc/parallel-local-search/src/RLS.cpp
 iostream
 -
 vector
--
-fstream
--
-string
--
-sstream
 -
 assert.h
 -
@@ -49,48 +49,26 @@ stdlib.h
 -
 time.h
 -
-QUBO.h
-/home/js/parallel-local-search/src/QUBO.h
-
-/home/js/parallel-local-search/src/QUBO.h
-vector
--
-
-/home/js/parallel-local-search/src/SOL.cpp
-iostream
--
-vector
--
-fstream
--
-string
--
-sstream
--
-assert.h
--
-stdlib.h
--
-time.h
+math.h
 -
 QUBO.h
-/home/js/parallel-local-search/src/QUBO.h
+/home/jasonzjc/parallel-local-search/src/QUBO.h
 SOL.h
-/home/js/parallel-local-search/src/SOL.h
+/home/jasonzjc/parallel-local-search/src/SOL.h
+RLS.h
+/home/jasonzjc/parallel-local-search/src/RLS.h
 
-/home/js/parallel-local-search/src/SOL.h
+/home/jasonzjc/parallel-local-search/src/RLS.h
 vector
 -
 QUBO.h
-/home/js/parallel-local-search/src/QUBO.h
+/home/jasonzjc/parallel-local-search/src/QUBO.h
+SOL.h
+/home/jasonzjc/parallel-local-search/src/SOL.h
 
-/home/js/parallel-local-search/src/main.cpp
-iostream
+/home/jasonzjc/parallel-local-search/src/SOL.h
+vector
 -
 QUBO.h
-/home/js/parallel-local-search/src/QUBO.h
-SOL.h
-/home/js/parallel-local-search/src/SOL.h
-LS.h
-/home/js/parallel-local-search/src/LS.h
+/home/jasonzjc/parallel-local-search/src/QUBO.h
 
