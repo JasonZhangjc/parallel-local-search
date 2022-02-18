@@ -49,7 +49,15 @@ class LS {
 		// consider all 1-bit flips
 		// 1st parameter for the max number of iterations
 		// 2nd parameter for initializing distinct random seed
-		vector<vector<int>> localSearchAll(int, int);
+		// accept <= states
+		vector<vector<int>> localSearchAllEqual(int, int);
+
+		// local search algorithm
+		// consider all 1-bit flips
+		// 1st parameter for the max number of iterations
+		// 2nd parameter for initializing distinct random seed
+		// accept < states
+		vector<vector<int>> localSearchAllLess(int, int);
 
 		// local search algorithm
 		// simulated annealing

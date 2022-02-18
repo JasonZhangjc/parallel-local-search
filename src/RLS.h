@@ -52,7 +52,15 @@ class RLS {
 		// consider all 1-bit flips
 		// 1st parameter for the max number of iterations
 		// 2nd parameter for initializing distinct random seed
-		vector<vector<int>> reversedLocalSearchAll(int, int);
+		// accept >= states
+		vector<vector<int>> reversedLocalSearchAllEqual(int, int);
+
+		// reversed local search algorithm: the opposite to LS::localSearchALl()
+		// consider all 1-bit flips
+		// 1st parameter for the max number of iterations
+		// 2nd parameter for initializing distinct random seed
+		// accept > states
+		vector<vector<int>> reversedLocalSearchAllMore(int, int);
 
 		// reversed local search algorithm: the opposite to RLS::localSearchOne()
 		// consider one 1-bit flips

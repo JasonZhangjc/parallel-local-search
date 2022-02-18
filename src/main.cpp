@@ -41,28 +41,47 @@ int main( ) {
 
    // randomly generate a solution for qubo1
    SOL sol1(qubo1);
+   cout << endl;
+
 
    // create a local search object
    LS ls1(qubo1, sol1);
-   cout << "Test localSearchAll----------------------------------------" << endl;
+   cout << "Test localSearchAllEqual-----------------------------------" << endl;
    vector<vector<int>> solution_list_ALL;
-   solution_list_ALL = ls1.localSearchAll(100, 1);
+   solution_list_ALL = ls1.localSearchAllEqual(100, 1);
+   cout << endl;
+
+   cout << "Test localSearchAllLess------------------------------------" << endl;
+   solution_list_ALL = ls1.localSearchAllLess(100, 1);
+   cout << endl;
+
 
    // create a reversed local search object
    RLS rls1(qubo1, sol1);
-   cout << "Test reversedLocalSearchAll--------------------------------" << endl;
+   cout << "Test reversedLocalSearchAllEqual---------------------------" << endl;
    vector<vector<int>> worse_solution_list_ALL;
-   worse_solution_list_ALL = rls1.reversedLocalSearchAll(1000, 1);
+   worse_solution_list_ALL = rls1.reversedLocalSearchAllEqual(1000, 1);
+   cout << endl;
+
+   cout << "Test reversedLocalSearchAllMore----------------------------" << endl;
+   worse_solution_list_ALL = rls1.reversedLocalSearchAllMore(1000, 1);
+   cout << endl;
 
 
    // read a good loca optima!
    sol1.readSOL(NUMBER_BITS, QUBO_ID, SOL_ID);
+   cout << endl;
    // sol1.printSOL();
 
    // create a reversed local search object
    RLS rls2(qubo1, sol1);
-   cout << "Test reversedLocalSearchAll--------------------------------" << endl;
-   worse_solution_list_ALL = rls2.reversedLocalSearchAll(1000, 1);
+   cout << "Test reversedLocalSearchAllEqual---------------------------" << endl;
+   worse_solution_list_ALL = rls2.reversedLocalSearchAllEqual(1000, 1);
+   cout << endl;
+
+   cout << "Test reversedLocalSearchAllMore----------------------------" << endl;
+   worse_solution_list_ALL = rls2.reversedLocalSearchAllMore(1000, 1);
+   cout << endl;
 
 
    // some for loop ***********************************************************
